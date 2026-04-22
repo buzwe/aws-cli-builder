@@ -14,6 +14,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def home():
+    return {"status": "AWS CLI Builder API running 🚀"}
+
 session = botocore.session.get_session()
 
 def to_kebab_case(name):
